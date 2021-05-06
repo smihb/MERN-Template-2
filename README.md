@@ -1,1 +1,1 @@
-# mern-dev-template
+# MERN Template

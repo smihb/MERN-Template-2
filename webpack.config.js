@@ -2,7 +2,7 @@ const htmlWebPlug = require('html-webpack-plugin');
 
 const webConfig = {
     mode: 'development',
-    entry: './src/app/index.js',
+    entry: './src/appfrontend/index.js',
     output: {
         path: '/',
         filename: 'bundle.js'
@@ -13,12 +13,20 @@ const webConfig = {
                 use: 'babel-loader',
                 test: /\.jsx?$/,
                 exclude: /node_modules/
+            },
+            {
+                use: ['style-loader','css-loader'],
+                test: /\.css/
+            },
+            {
+                type: 'asset',
+                test: /\.(png|jpg)/
             }
         ]
     },
     plugins: [
         new htmlWebPlug({
-            template: './src/statics/index.html'
+            template: './src/backend/statics/index.html'
         })
     ]
 }
